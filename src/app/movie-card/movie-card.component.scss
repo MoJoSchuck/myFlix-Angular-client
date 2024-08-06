@@ -1,0 +1,62 @@
+$dark-color: rgb(31, 41, 51);
+$lighter-color: rgb(43, 57, 72);
+
+body {
+    background-color: $lighter-color;
+    color: white;
+}
+
+.movies-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+    margin: 0 20px;
+
+    &.single-movie {
+        display: flex;
+        margin: 0 auto;
+        max-width: 550px;
+    }
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 20px;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: $dark-color;
+    color: white;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card button {
+    cursor: pointer;
+}
+
+::ng-deep .movie-title {
+    text-align: center !important;
+    color: white; 
+}
+
+
+
+mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-image {
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
