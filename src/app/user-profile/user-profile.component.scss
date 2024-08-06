@@ -1,0 +1,117 @@
+// Custom styles for UserProfileView
+.user-profile-container {
+    .profile-title {
+        margin: 3rem 0 1rem 8rem;
+        font-size: 2.0rem;
+        color: white;
+
+        @media (max-width: 768px) {
+            margin: 1.5rem auto;
+            font-size: 1.5rem; // Smaller font size for mobile devices
+            text-align: center; // Center the text content
+        }
+    }
+
+    .profile-divider {
+        border: 0;
+        height: 1px;
+        background: white;
+        margin: 0 auto 2rem auto;
+        width: 80%;
+
+        @media (max-width: 768px) {
+            width: 90%; // Increase width on smaller screens
+            margin-bottom: 1.5rem; // Reduce bottom margin
+        }
+    }
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-card {
+    margin-top: 15vh;
+    margin-right: 2vw;
+    padding: 25px;
+    width: 20%;
+    min-width: 380px;
+
+    @media (max-width: 768px) {
+        margin-top: 10vh; // Adjust margin for smaller screens
+        margin-right: 0; // No margin on the right
+        width: 90%; // Full width for smaller screens
+    }
+}
+
+.profile-card-header {
+    font-size: 25px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-card img {
+    width: 100%;
+    height: 73%;
+    padding: 5px;
+    object-fit: cover;
+    object-position: 100% 0;
+    border-radius: 50%;
+}
+
+.edit-userdata-card {
+    padding: 25px;
+    width: 60%;
+    min-width: 380px;
+    color: white;
+    background-color: rgb(53, 66, 80);
+    margin: 3rem 3rem 3rem 8rem;
+
+    @media (max-width: 768px) {
+        width: 90%; // Full width for smaller screens
+        margin: 1.5rem auto; // Center on smaller screens
+    }
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Stack buttons vertically on smaller screens
+    }
+}
+
+.actions button {
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 20%;
+
+    @media (max-width: 768px) {
+        width: 100%; // Full width for buttons on smaller screens
+        margin-left: 0; // Remove left margin
+    }
+}
+
+.outline-danger {
+    color: #dc3545; // Set text color to danger color (red)
+    border: 1px solid #dc3545; // Add outline border in danger color
+    background-color: transparent; // Make background transparent
+    transition: background-color 0.3s; // Smooth transition for hover effect
+  
+    &:hover {
+      background-color: #dc3545; // Change background to danger color on hover
+      color: #fff; // Change text color to white on hover
+    }
+  }
+  
