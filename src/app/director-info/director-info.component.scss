@@ -1,0 +1,26 @@
+.director-card-header {
+    font-size: 25px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.table-content {
+    color: white;
+    width: 100%;
+}
+
+.table-content td {
+    vertical-align: top;
+    /* Ensures content in each cell aligns at the top */
+    padding: 5px 10px;
+    /* Adds some space around the cell content */
+}
+
+.table-content h4 {
+    margin: 0;
+    padding-right: 10px;
+    /* Adds some space between the label and content */
+    font-weight: bold;
+}
