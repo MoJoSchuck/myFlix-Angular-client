@@ -1,38 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <mat-card>
-    <mat-card-header>
-        <mat-card-title>Sign Up!</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form>
-            <mat-form-field>
-                <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username"
-                    required>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password"
-                    required>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
-            </mat-form-field>
-        </form>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button (click)="registerUser()" color="primary">
-            Sign Up
-        </button>
-    </mat-card-actions>
-</mat-card>
-</body>
-</html>
+    <form (ngSubmit)="registerUser()">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="userData.Username" placeholder="Username" name="Username" required minlength="5">
+        <mat-error *ngIf="!userData.Username || userData.Username.length < 5">
+          Username is required with at least 5 characters
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="userData.Password" placeholder="Password" name="Password" type="password" required>
+        <mat-error *ngIf="!userData.Password">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="userData.Email" placeholder="Email" name="Email" type="email" required>
+        <mat-error *ngIf="!userData.Email || !userData.Email.includes('@')">
+          Email does not appear to be valid
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Birthday</mat-label>
+        <input matInput [(ngModel)]="userData.Birthday" placeholder="Birthday" name="Birthday" type="date">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Register</button>
+    </form>
+  </mat-card>
+  
