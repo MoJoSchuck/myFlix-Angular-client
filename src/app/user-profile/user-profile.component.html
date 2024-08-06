@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="user-profile-container">
+    <h2 class="profile-title">User Profile</h2>
+    <hr class="profile-divider" />
+</div>
+<mat-card class="edit-userdata-card">
+    <mat-card-header class="profile-card-header">
+    </mat-card-header>
+    <mat-card-content>
+        <form (ngSubmit)="updateUser()">
+            <label>Username:</label>
+            <mat-form-field class="form-inputs" appearance="outline">
+                <input matInput [(ngModel)]="userData.Username" placeholder="Username" name="Username" required
+                    minlength="5">
+                <mat-error *ngIf="!userData.Username || userData.Username.length < 5">
+                    Username is required with at least 5 characters
+                </mat-error>
+            </mat-form-field>
+
+            <label>Password:</label>
+            <mat-form-field class="form-inputs" appearance="outline">
+                <input matInput [(ngModel)]="userData.Password" placeholder="Password" name="Password" type="password"
+                    required>
+                <mat-error *ngIf="!userData.Password">
+                    Password is required
+                </mat-error>
+            </mat-form-field>
+
+            <label>Email:</label>
+            <mat-form-field class="form-inputs" appearance="outline">
+                <input matInput [(ngModel)]="userData.Email" placeholder="Email" name="Email" type="email" required
+                    email>
+                <mat-error *ngIf="!userData.Email || !userData.Email.includes('@')">
+                    Email does not appear to be valid
+                </mat-error>
+            </mat-form-field>
+
+            <label>Birthday:</label>
+            <mat-form-field class="form-inputs" appearance="outline">
+                <input matInput [(ngModel)]="userData.Birthday" placeholder="Birthday" name="Birthday" type="date"
+                    required>
+                <mat-error *ngIf="!userData.Birthday">
+                    Birthday is required
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <mat-card-actions class="actions">
+            <button mat-button class="outline-danger" (click)="deleteUser()">Delete</button>
+
+            <button mat-raised-button class="button-profile" color="primary" (click)="updateUser()" type="submit">
+                Update
+            </button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
