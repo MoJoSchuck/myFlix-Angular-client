@@ -1,0 +1,122 @@
+.navbar {
+    background-color: #f8f9fa;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: fixed;
+    /* Fixiert die Navbar */
+    top: 0;
+    /* Am oberen Rand der Seite */
+    left: 0;
+    /* Am linken Rand der Seite */
+    right: 0;
+    /* Am rechten Rand der Seite */
+    z-index: 1000;
+    /* Stellt sicher, dass die Navbar über anderen Inhalten bleibt */
+
+    @media (max-width: 768px) {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+}
+
+
+.logo-link {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.burger-icon {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        display: none;
+        flex-direction: column;
+        background-color: #f8f9fa;
+        position: absolute;
+        top: 56px;
+        right: 15px;
+        /* Ausrichtung an der rechten Seite der Navbar */
+        left: auto;
+        /* Sicherstellen, dass es nicht die volle Breite einnimmt */
+        padding: 10px 15px;
+        z-index: 1000;
+        max-width: 300px;
+        /* Maximale Breite des Dropdowns */
+        border-radius: 8px;
+        /* Optional, für abgerundete Ecken */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        /* Optional, für etwas Tiefe */
+
+        &.open {
+            display: flex;
+        }
+    }
+
+    .nav-link {
+        margin-right: 15px;
+        color: #000;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            margin: 10px 0;
+            text-align: center;
+            /* Zentriert den Text im Dropdown */
+            width: 100%;
+            /* Stellt sicher, dass Links die gesamte Breite ausfüllen */
+        }
+    }
+
+    .search-field {
+        margin-right: 15px;
+
+        @media (max-width: 768px) {
+            width: calc(100% - 30px);
+            margin: 10px 15px;
+        }
+    }
+
+    button.mat-button {
+        background-color: #28a745;
+        color: #fff;
+
+        &:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            width: calc(100% - 30px);
+            margin: 10px 15px;
+        }
+    }
+}
