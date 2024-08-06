@@ -130,19 +130,33 @@ export class FetchApiDataService {
         );
     }
 
+
+
     // Making the api call for the Edit User endpoint
-    editUser(userDetails: any): Observable<any> {
-        const token = localStorage.getItem('token');
-        return this.http.put(apiUrl + 'users/' + userDetails.Username, userDetails, {
-            headers: new HttpHeaders(
-                {
-                    Authorization: 'Bearer ' + token,
-                })
-        }).pipe(
-            map(this.extractResponseData),
-            catchError(this.handleError)
-        );
+   editUser(userDetails: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    const currentUsername = JSON.parse(localStorage.getItem('user') || '{}').Username;
+    
+    // Optional: Überprüfung, ob das Passwort geändert wurde
+    if (!userDetails.Password) {
+        delete userDetails.Password;
     }
+
+    // Sende nur, wenn das neue Passwort vorhanden ist
+    if (!userDetails.Password) {
+        delete userDetails.Password;
+    }
+
+    return this.http.put(apiUrl + 'users/' + currentUsername, userDetails, {
+        headers: new HttpHeaders({
+            Authorization: 'Bearer ' + token,
+        })
+    }).pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+    );
+}
+
 
     // Making the api call for the Delete User endpoint
     deleteUser(): Observable<any> {
