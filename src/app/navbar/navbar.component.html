@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="navbar">
+    <span class="navbar-logo">
+        <a routerLink="/movies" class="logo-link">myFlix</a>
+    </span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="toggleMenu()" class="burger-icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="nav-links" [class.open]="menuOpen">
+        <a mat-button routerLink="/profile" class="nav-link">Profile</a>
+        <a mat-button routerLink="/favorites" class="nav-link">Favorites</a>
+        <a mat-button (click)="logout()" class="nav-link">Logout</a>
+        <mat-form-field appearance="outline" class="search-field">
+            <mat-label>Search...</mat-label>
+            <input matInput [(ngModel)]="searchQuery" (input)="searchMovies()">
+        </mat-form-field>
+        <button mat-button (click)="searchMovies()">Search</button>
+    </div>
+</mat-toolbar>
