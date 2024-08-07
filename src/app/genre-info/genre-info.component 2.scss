@@ -1,0 +1,47 @@
+.genre-card-header {
+    font-size: 25px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.genre-card-content {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .spacer {
+        flex: 1;
+    }
+
+    .search-field {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .logo-link {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .search-field {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
