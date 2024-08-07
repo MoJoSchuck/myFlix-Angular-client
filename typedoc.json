@@ -1,0 +1,12 @@
+{
+    "entryPoints": ["src/app"],
+    "entryPointStrategy": "expand",
+    "out": "docs",
+    "exclude": ["**/*.spec.ts"],
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "name": "My Project Documentation",
+    "includeVersion": true
+  }
+  
