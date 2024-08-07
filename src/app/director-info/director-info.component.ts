@@ -2,10 +2,11 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 /**
- * @description Component representing the director info dialog.
+ * Component representing the director info dialog.
+ * 
  * @selector 'app-director-info'
  * @templateUrl './director-info.component.html'
- * @styleUrls ['./director-info.component.scss']
+ * @styleUrls ['./director-info.component.scss'
  */
 @Component({
     selector: 'app-director-info',
@@ -15,12 +16,16 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DirectorInfoComponent implements OnInit {
 
     /**
-   * @constructor - Constructor for DirectorInfoComponent.
-   * @param - Data containing director information.
-   */
+     * Data containing director information.
+     * 
+     * @param data - The director data injected into the dialog.
+     * @property {string} data.Name - The name of the director.
+     * @property {string} data.Bio - The biography of the director.
+     * @property {string} data.Birth - The birth date of the director.
+     * @property {string} data.Death - The death date of the director (if applicable).
+     */
     constructor(
         @Inject(MAT_DIALOG_DATA)
-
         public data: {
             Name: string,
             Bio: string,
@@ -29,8 +34,11 @@ export class DirectorInfoComponent implements OnInit {
         }
     ) { }
 
+    /**
+     * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+     * Initialize any logic needed for the component here.
+     */
     ngOnInit(): void {
 
     }
-
 }

@@ -4,6 +4,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+/**
+ * Component representing the user profile page.
+ * 
+ * @selector 'app-user-profile'
+ * @templateUrl './user-profile.component.html'
+ * @styleUrls ['./user-profile.component.scss'
+ */
 @Component({
     selector: 'app-user-profile',
     templateUrl: './user-profile.component.html',
@@ -11,9 +18,24 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserProfileComponent implements OnInit {
 
+    /**
+     * User data object containing username, email, birthday, and password.
+     */
     @Input() userData = { Username: "", Email: "", Birthday: "", Password: "" };
+
+    /**
+     * Object to store the user's profile information.
+     */
     user: any = {};
 
+    /**
+     * Creates an instance of UserProfileComponent.
+     * 
+     * @param fetchApiData - Service for fetching API data.
+     * @param snackBar - Service for displaying snack bar notifications.
+     * @param router - The router service for navigating between views.
+     * @param dialog - Service for opening dialogs.
+     */
     constructor(
         public fetchApiData: FetchApiDataService,
         public snackBar: MatSnackBar,
@@ -21,10 +43,18 @@ export class UserProfileComponent implements OnInit {
         public dialog: MatDialog
     ) { }
 
+    /**
+     * Angular lifecycle hook that is called after data-bound properties of a directive are initialized.
+     * Fetches the user's profile information.
+     */
     ngOnInit(): void {
         this.getProfile();
     }
 
+    /**
+     * Fetches the user's profile information from the API.
+     * Updates the userData object with the fetched data.
+     */
     getProfile(): void {
         this.user = this.fetchApiData.getUser();
         this.userData.Username = this.user.Username;
@@ -32,6 +62,12 @@ export class UserProfileComponent implements OnInit {
         this.userData.Birthday = this.user.Birthday;
     }
 
+    /**
+     * Updates the user's profile information.
+     * Performs validation checks on the userData before making the API call.
+     * On successful update, logs out the user and navigates to the welcome page.
+     * Displays a notification upon success or failure.
+     */
     updateUser(): void {
         if (this.userData.Username.length < 5) {
             this.snackBar.open('Username must be at least 5 characters long', 'OK', {
@@ -70,6 +106,11 @@ export class UserProfileComponent implements OnInit {
         });
     }
 
+    /**
+     * Deletes the user's profile.
+     * Clears the local storage and navigates to the welcome page upon success.
+     * Displays a notification upon success or failure.
+     */
     deleteUser(): void {
         this.router.navigate(['welcome']).then(() => {
             localStorage.clear();

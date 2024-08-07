@@ -19,8 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-// Component
+// Components
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
@@ -32,8 +31,6 @@ import { GenreInfoComponent } from './genre-info/genre-info.component';
 import { DirectorInfoComponent } from './director-info/director-info.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-
-
 const appRoutes: Routes = [
     { path: 'welcome', component: WelcomePageComponent },
     { path: 'movies', component: MovieCardComponent },
@@ -42,6 +39,11 @@ const appRoutes: Routes = [
     { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
+/**
+ * The main module of the application.
+ * 
+ * @module AppModule
+ */
 @NgModule({
     declarations: [
         AppComponent,
