@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "typedoc": "typedoc"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +46,6 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typedoc": "^0.26.5",
-    "typescript": "~3.9.5"
+    "typescript": "^3.9.5"
   }
 }
