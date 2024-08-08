@@ -33,3 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Mobile View
 <img width="288" alt="Bildschirmfoto 2024-08-08 um 12 37 01" src="https://github.com/user-attachments/assets/2c1a4b97-6e0c-436a-afde-77994e326385">
+
+## Live Demo
+
+You can access the live demo of the application [here](https://mojoschuck.github.io/myFlix-Angular-client/welcome).
