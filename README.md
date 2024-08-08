@@ -1,6 +1,6 @@
 # MyFlixAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8 and uses Node.js version 12.16.2.
 
 ## Development server
 
@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Screenshots
+
+### Web View
+<img width="600" alt="Bildschirmfoto 2024-08-08 um 12 34 10" src="https://github.com/user-attachments/assets/41e00706-8979-4742-82cf-af1dd9926ca9">
+
+### Mobile View
+<img width="288" alt="Bildschirmfoto 2024-08-08 um 12 37 01" src="https://github.com/user-attachments/assets/b880d0e0-d6e4-4593-b18a-33795b2561f9">
