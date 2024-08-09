@@ -2,13 +2,23 @@
 .user-profile-container {
     .profile-title {
         margin: 3rem 0 1rem 8rem;
-        font-size: 2.0rem;
+        font-size: 2rem;
         color: white;
 
         @media (max-width: 768px) {
-            margin: 1.5rem auto;
-            font-size: 1.5rem; // Smaller font size for mobile devices
-            text-align: center; // Center the text content
+            margin: 1.5rem auto; // Center and reduce margin for smaller screens
+            font-size: 1.5rem; // Reduce font size for smaller screens
+            text-align: center;
+        }
+
+        @media (max-width: 450px) {
+            margin: 1rem auto; // Further reduce margin for smaller screens
+            font-size: 1.2rem; // Further reduce font size for smaller screens
+        }
+
+        @media (max-width: 375px) {
+            margin: 0.5rem auto; // Further reduce margin for very small screens
+            font-size: 1rem; // Further reduce font size for very small screens
         }
     }
 
@@ -21,7 +31,17 @@
 
         @media (max-width: 768px) {
             width: 90%; // Increase width on smaller screens
-            margin-bottom: 1.5rem; // Reduce bottom margin
+            margin-bottom: 1.5rem; // Reduce bottom margin for smaller screens
+        }
+
+        @media (max-width: 450px) {
+            width: 95%; // Further increase width on smaller screens
+            margin-bottom: 1rem; // Further reduce bottom margin
+        }
+
+        @media (max-width: 375px) {
+            width: 100%; // Full width on very small screens
+            margin-bottom: 0.5rem; // Further reduce bottom margin
         }
     }
 }
@@ -30,49 +50,80 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center; // Added for better vertical alignment
+    padding: 1rem; // Added to reduce spacing to screen edges
 }
 
 .user-card {
-    margin-top: 15vh;
+    margin-top: 10vh;
     margin-right: 2vw;
-    padding: 25px;
-    width: 20%;
-    min-width: 380px;
+    padding: 20px;
+    width: 30%;
+    min-width: 280px; // Reduced minimum width
 
     @media (max-width: 768px) {
-        margin-top: 10vh; // Adjust margin for smaller screens
-        margin-right: 0; // No margin on the right
-        width: 90%; // Full width for smaller screens
+        margin-top: 5vh;
+        margin-right: 0; // Remove right margin for smaller screens
+        width: 80%; // Increase width on smaller screens
+        min-width: unset; // Remove minimum width
+    }
+
+    @media (max-width: 450px) {
+        margin-top: 3vh;
+        width: 90%; // Increase width on smaller screens
+        padding: 15px; // Reduce padding for smaller screens
+    }
+
+    @media (max-width: 375px) {
+        margin-top: 2vh;
+        width: 95%; // Further increase width for very small screens
+        padding: 10px; // Further reduce padding for very small screens
     }
 }
 
 .profile-card-header {
-    font-size: 25px;
-    margin-bottom: 15px;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center; // Center the header text
+
+    @media (max-width: 450px) {
+        font-size: 1.3rem; // Reduce font size for smaller screens
+    }
+
+    @media (max-width: 375px) {
+        font-size: 1.1rem; // Further reduce font size for very small screens
+    }
 }
 
 .user-card img {
     width: 100%;
-    height: 73%;
+    height: auto; // Allows the image to scale proportionally
     padding: 5px;
     object-fit: cover;
-    object-position: 100% 0;
-    border-radius: 50%;
+    border-radius: 50%; // Make the image circular
 }
 
 .edit-userdata-card {
-    padding: 25px;
+    padding: 20px;
     width: 60%;
-    min-width: 380px;
+    min-width: 280px; // Reduced minimum width
     color: white;
     background-color: rgb(53, 66, 80);
-    margin: 3rem 3rem 3rem 8rem;
+    margin: 2rem auto;
 
     @media (max-width: 768px) {
-        width: 90%; // Full width for smaller screens
-        margin: 1.5rem auto; // Center on smaller screens
+        width: 80%; // Increase width on smaller screens
+        padding: 15px; // Reduce padding for smaller screens
+    }
+
+    @media (max-width: 450px) {
+        width: 90%; // Further increase width on smaller screens
+        padding: 10px; // Further reduce padding for smaller screens
+    }
+
+    @media (max-width: 375px) {
+        width: 95%; // Full width on very small screens
+        padding: 5px; // Further reduce padding for very small screens
     }
 }
 
@@ -86,32 +137,47 @@
 .actions {
     display: flex;
     flex-direction: row-reverse;
+    flex-wrap: wrap; // Allows wrapping if needed
+    gap: 10px; // Adds spacing between buttons
+    justify-content: center; // Centers the buttons horizontally
 
     @media (max-width: 768px) {
         flex-direction: column; // Stack buttons vertically on smaller screens
+        align-items: center; // Center buttons on smaller screens
+    }
+
+    @media (max-width: 450px) {
+        flex-direction: column; // Stack buttons vertically on small screens
+        align-items: center;
+        width: 100%; // Ensure actions take full width
+        gap: 5px; // Reduce gap on small screens
     }
 }
 
 .actions button {
-    margin-top: 15px;
-    margin-left: 10px;
-    width: 20%;
+    margin-top: 10px;
+    width: auto; // Removes fixed width
+    flex: 1; // Distributes buttons evenly
 
     @media (max-width: 768px) {
-        width: 100%; // Full width for buttons on smaller screens
-        margin-left: 0; // Remove left margin
+        width: 90%; // Make buttons almost full width on smaller screens
+    }
+
+    @media (max-width: 450px) {
+        width: 90%; // Make buttons full width on very small screens
+        padding: 10px; // Reduce padding for smaller buttons
+        font-size: 14px; // Reduce font size for smaller buttons
     }
 }
 
 .outline-danger {
-    color: #dc3545; // Set text color to danger color (red)
-    border: 1px solid #dc3545; // Add outline border in danger color
-    background-color: transparent; // Make background transparent
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    background-color: transparent;
     transition: background-color 0.3s; // Smooth transition for hover effect
-  
+
     &:hover {
-      background-color: #dc3545; // Change background to danger color on hover
-      color: #fff; // Change text color to white on hover
+        background-color: #dc3545; // Change background to danger color on hover
+        color: #fff; // Change text color to white on hover
     }
-  }
-  
+}

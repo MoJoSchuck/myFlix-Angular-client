@@ -44,8 +44,6 @@ body {
 }
 
 
-
-
 .movies-container {
     display: grid;
     gap: 20px;
@@ -91,6 +89,15 @@ mat-card-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 450px) {
+        gap: 0; // Remove any additional gap if it was previously defined
+
+        & > * {
+            margin-left: -5px; // Reduce any additional gap if it was previously defined
+            margin-right: -5px; // Reduce the space between words/symbols on the right
+        }
+    }
 }
 
 .movie-image {
